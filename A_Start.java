@@ -129,3 +129,81 @@ public class A_Start {
 
 
 
+
+//method 3
+
+// import java.util.*;
+
+// class Node implements Comparable<Node> {
+//     int value, cost, heuristic;
+
+//     Node(int value, int cost, int heuristic) {
+//         this.value = value;
+//         this.cost = cost;
+//         this.heuristic = heuristic;
+//     }
+
+//     int totalCost() {
+//         return cost + heuristic;
+//     }
+
+//     public int compareTo(Node other) {
+//         return this.totalCost() - other.totalCost();
+//     }
+// }
+
+// public class A_start {
+
+//     static int[][] graph = {
+//         {0, 1, 4, 0},
+//         {1, 0, 2, 5},
+//         {4, 2, 0, 1},
+//         {0, 5, 1, 0}
+//     };
+
+//     // Heuristic values
+//     static int[] h = {7, 6, 2, 0};
+
+//     public static void aStar(int start, int goal) {
+
+//         PriorityQueue<Node> pq = new PriorityQueue<>();
+//         boolean[] visited = new boolean[4];
+
+//         pq.add(new Node(start, 0, h[start]));
+
+//         while (!pq.isEmpty()) {
+
+//             Node current = pq.poll();
+
+//             if (visited[current.value])
+//                 continue;
+
+//             visited[current.value] = true;
+
+//             System.out.println("Visited Node: " + current.value);
+
+//             if (current.value == goal) {
+//                 System.out.println("Goal Reached!");
+//                 return;
+//             }
+
+//             for (int i = 0; i < 4; i++) {
+
+//                 if (graph[current.value][i] > 0 && !visited[i]) {
+
+//                     int newCost = current.cost + graph[current.value][i];
+
+//                     pq.add(new Node(i, newCost, h[i]));
+//                 }
+//             }
+//         }
+//     }
+
+//     public static void main(String[] args) {
+
+//         int start = 0;
+//         int goal = 3;
+
+//         aStar(start, goal);
+//     }
+// }
