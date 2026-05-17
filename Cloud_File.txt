@@ -1,0 +1,23 @@
+//apex programming code for practical 3 and fourr
+
+
+// saleforeces id given below
+bhamaredarshan023.512d62bb5d73@agentforce.com
+
+
+public class LinearSearchDemo {
+    public static void search(){
+        Integer[]arr=new Integer[]{1,2,5,6,7};
+        Boolean found=false;
+        Integer key=5;
+        for(Integer i=0;i<arr.size();i++){
+            if(arr[i]==key){
+                System.debug('Element found at position at:'+i);
+                found=true;
+            }
+        }
+        if(found==false){
+            System.debug('element not found');
+        }
+    }
+}
